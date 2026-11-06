@@ -1,0 +1,45 @@
+{
+  "name": "dsh-keine",
+  "version": "0.3.0",
+  "description": "Keine Kamishirasawa for your chat log: recall a whole turn or edit-and-resend it — image attachments included — by consuming the old history through the official surface-replace contract while the append-only log keeps every byte.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./src/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "keine",
+    "image",
+    "attachment",
+    "recall",
+    "edit",
+    "resend"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    },
+    "engines": {
+      "dsh": ">=0.1.7-rc.1"
+    }
+  }
+}

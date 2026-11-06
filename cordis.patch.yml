@@ -1,0 +1,15 @@
+# dsh-keine — profile bundle patch layer.
+#
+# Mounts the plugin as one normal Cordis row in the target profile (the
+# package's `main` → src/index.js Host half runs as that row). The package's
+# `dsh.client` metadata is scanned by the modules node half, and its client half
+# (exports["./client"] → src/client.js) is bundled into the Web client
+# automatically while this row is enabled.
+#
+# Install into any profile with:
+#   dsh plugin --profile <name> add dsh-keine
+# Restart DSH (or rely on the profile's patchReload) after installing.
+
+- insert:
+    - id: dsh-keine
+      name: 'dsh-keine'
